@@ -9,7 +9,7 @@ import {
 const _getCardProps = (card) => ({
   title: card.title,
   description: card.description,
-  rangeTime: getRangeTime()
+  rangeTime: getRangeTime(card.startDate, card.endDate)
 });
 
 const Body = () => {
