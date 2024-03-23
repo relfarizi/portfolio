@@ -1,3 +1,5 @@
-import Example from './Example';
+import Card from './Card';
 
-export default Example;
+export {
+  Card
+};
