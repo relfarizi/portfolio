@@ -8,7 +8,7 @@ import {
 
 const _getCardProps = (card) => ({
   title: card.title,
-  description: card.description,
+  subTitle: card.place,
   rangeTime: getRangeTime(card.startDate, card.endDate)
 });
 
