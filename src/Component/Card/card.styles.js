@@ -3,10 +3,9 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#eecf00',
-    justifyContent: 'space-around',
-    padding: '1rem',
-    margin: '1rem',
+    // backgroundColor: '#eecf00',
+    justifyContent: 'space-between',
+    padding: 10,
     border: '1px solid #ccc',
     borderRadius: '10px',
     boxShadow: '0 2px 8px rgba(0, 0, 0, 0.1)',
@@ -17,13 +16,13 @@ const styles = {
     justifyContent: 'center',
     marginBottom: '1rem'
   },
-  cardRight: {
+  cardRight: (reverse) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    alignItems: 'flex-end',
+    alignItems: reverse ? 'flex-start' : 'flex-end',
     height: '100%',
-  },
+  }),
   headline: {
     display: 'flex',
     flexDirection: 'row',
@@ -36,7 +35,9 @@ const styles = {
     alignItems: 'center'
   },
   image: {
-    width: 200,
+    width: 80,
+    height: 80,
+    borderRadius: '100%'
     // height: 100
   }
 };

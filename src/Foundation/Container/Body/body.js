@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Card } from '../../../Component';
+import { Card, VerticalTimeline } from '../../../Component';
 import { mockCard } from '../../../Mock';
 import {
   getRangeTime
@@ -9,18 +9,25 @@ import {
 const _getCardProps = (card) => ({
   title: card.title,
   subTitle: card.place,
-  rangeTime: getRangeTime(card.startDate, card.endDate)
+  rangeTime: getRangeTime(card.startDate, card.endDate),
+  order: card.order
 });
 
 const Body = () => {
   const cards = mockCard;
+  // return (
+  //   cards.map((card) =>
+  //     <Card
+  //       {..._getCardProps(card)}
+  //     />
+  //   )
+  // );
+  const mappedCards = cards.map((card) => _getCardProps(card))
   return (
-    cards.map((card) =>
-      <Card
-        {..._getCardProps(card)}
+      <VerticalTimeline
+        cards={mappedCards}
       />
     )
-  );
 }
 
 export default Body;

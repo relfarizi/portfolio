@@ -49,19 +49,24 @@ const _renderRangeTime = (rangeTime) => {
 }
 
 const Card = (props) => {
-  const { title, subTitle, description, rangeTime } = props;
-  console.log(props)
+  const { title, subTitle, description, rangeTime, reverse } = props;
 
   return (
-    <div style={styles.cardContainer}>
-      <div style={styles.cardLeft}>
+    <div style={{
+      ...styles.cardContainer,
+      ...props.style
+    }}>
+      {!reverse && <div style={styles.cardLeft}>
         {_renderImage()}
-      </div>
-      <div style={styles.cardRight}>
+      </div>}
+      <div style={styles.cardRight(reverse)}>
         {_renderHeadline(title, subTitle)}
         {_renderDescription(description)}
         {_renderRangeTime(rangeTime)}
       </div>
+      {reverse && <div style={styles.cardLeft}>
+        {_renderImage()}
+      </div>}
     </div>
   )
 };

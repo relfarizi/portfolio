@@ -7,9 +7,9 @@ import { Header, Body, Footer } from '../Container'
 const Wrapper = () => {
   return (
     <div style={styles.wrapperContainer}>
-      <Header />
+      {/*<Header />*/}
       <Body />
-      <Footer />
+      {/*<Footer />*/}
     </div>
   )
 }
